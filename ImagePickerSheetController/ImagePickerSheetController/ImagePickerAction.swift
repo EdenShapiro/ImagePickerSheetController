@@ -32,11 +32,11 @@ open class ImagePickerAction {
     fileprivate let secondaryHandler: SecondaryHandler?
     
     /// Initializes a new cancel ImagePickerAction
-    public init(cancelTitle: String) {
+    public init(cancelTitle: String, handler: @escaping Handler) {
         self.title = cancelTitle
         self.secondaryTitle = { _ in cancelTitle }
         self.style = .cancel
-        self.handler = nil
+        self.handler = handler
         self.secondaryHandler = nil
     }
     

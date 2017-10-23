@@ -57,7 +57,9 @@ class ViewController: UIViewController {
         }, secondaryHandler: { _, numberOfPhotos in
             print("Send \(controller.selectedAssets)")
         }))
-        controller.addAction(ImagePickerAction(cancelTitle: NSLocalizedString("Cancel", comment: "Action Title")))
+        controller.addAction(ImagePickerAction(cancelTitle: NSLocalizedString("Cancel", comment: "Action Title"), handler: { _ in
+//             self.view.backgroundColor = .blue
+        }))
         
         if UIDevice.current.userInterfaceIdiom == .pad {
             controller.modalPresentationStyle = .popover
